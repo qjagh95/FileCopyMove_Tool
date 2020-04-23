@@ -18,6 +18,7 @@ namespace FileCopyMove_Tool
         String Ext = null;
         bool isCopy = true;
         int CopyCount = 0;
+
         HashSet<string> SerchFile = new HashSet<string>();
         HashSet<string> SerchFolder = new HashSet<string>();
         HashSet<string> SerchExt = new HashSet<string>();
