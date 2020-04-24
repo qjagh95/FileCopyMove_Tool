@@ -324,11 +324,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label13.Location = new System.Drawing.Point(805, 351);
+            this.label13.Location = new System.Drawing.Point(744, 350);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 12);
+            this.label13.Size = new System.Drawing.Size(164, 12);
             this.label13.TabIndex = 31;
-            this.label13.Text = "Made By 정범호";
+            this.label13.Text = "Made By 정범호(4시간 걸림)";
             // 
             // Form1
             // 
@@ -365,7 +365,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "FileCopyMove_Tool";
+            this.Text = "폴더 내 많은 파일을 특정 경로에 몰아넣고 싶을때 사용하세요";
             this.ResumeLayout(false);
             this.PerformLayout();
 

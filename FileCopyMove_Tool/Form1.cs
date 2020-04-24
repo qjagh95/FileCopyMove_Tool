@@ -26,6 +26,8 @@ namespace FileCopyMove_Tool
         public Form1()
         {
             InitializeComponent();
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
         }
 
         private bool FindSerchFile(string str)
@@ -79,6 +81,9 @@ namespace FileCopyMove_Tool
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (listBox2.Items.Count == 0)
+                return;
+
             listBox2.Items.Clear();
         }
 
@@ -197,7 +202,7 @@ namespace FileCopyMove_Tool
                 CopyCount++;
             }
 
-           DialogResult mg = MessageBox.Show("작업 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+         MessageBox.Show("작업 완료", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -205,18 +210,17 @@ namespace FileCopyMove_Tool
             //실행코드!
             if (StartPath == null)
             {
-                DialogResult mg = MessageBox.Show("시작경로를 넣어주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("시작경로를 넣어주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             if (TargetPath == null)
             {
-                DialogResult mg = MessageBox.Show("타겟 경로를 넣어주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("타겟 경로를 넣어주세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             DirCheck(StartPath);
-
         }
 
         private void _OutFolder(object sender, KeyEventArgs e)
@@ -230,7 +234,7 @@ namespace FileCopyMove_Tool
                     {
                         if (FindSerchFolder(textBox4.Text) == true)
                         {
-                            DialogResult mg = MessageBox.Show("중복된 폴더명이 존재합니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("중복된 폴더명이 존재합니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             textBox4.Text = "";
                             return;
                         }
@@ -254,9 +258,24 @@ namespace FileCopyMove_Tool
                     {
                         if (FindSerchFile(textBox4.Text) == true)
                         {
-                            DialogResult mg = MessageBox.Show("중복된 이름이 존재합니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("중복된 이름이 존재합니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             textBox5.Text = "";
-                            return;
+                            break;
+                        }
+
+                        string strTemp = textBox5.Text;
+                        strTemp = System.IO.Path.GetExtension(strTemp);
+
+                        if (strTemp == "")
+                        {
+                            MessageBox.Show("확장자를 입력하세요", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        }
+
+                        if (textBox5.Text[0] == '.')
+                        {
+                            DialogResult mg = MessageBox.Show("파일명은 확장자만 입력할 수 없습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
                         }
 
                         listBox4.Items.Add(textBox5.Text);
