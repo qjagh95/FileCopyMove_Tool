@@ -58,6 +58,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -167,7 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 345);
+            this.label3.Location = new System.Drawing.Point(277, 345);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 12);
             this.label3.TabIndex = 14;
@@ -294,7 +295,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(404, 183);
+            this.label11.Location = new System.Drawing.Point(404, 188);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(267, 12);
             this.label11.TabIndex = 28;
@@ -303,7 +304,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(534, 159);
+            this.label12.Location = new System.Drawing.Point(536, 156);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(108, 12);
             this.label12.TabIndex = 29;
@@ -319,11 +320,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Location = new System.Drawing.Point(805, 351);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 12);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Made By 정범호";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 366);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -390,6 +402,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label13;
     }
 }
 
