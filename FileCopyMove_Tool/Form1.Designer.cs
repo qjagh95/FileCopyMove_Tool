@@ -200,7 +200,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(138, 136);
             this.listBox2.TabIndex = 17;
-            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
+            this.listBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this._OutExt);
             // 
             // label5
             // 

@@ -139,6 +139,9 @@ namespace FileCopyMove_Tool
 
                         int Idx = listBox2.SelectedIndex;
 
+                        if (listBox2.SelectedItem == null)
+                            return;
+
                         SerchExt.Remove(listBox2.SelectedItem.ToString());
                         listBox2.Items.RemoveAt(Idx);
                         listBox2.Update();
@@ -300,6 +303,9 @@ namespace FileCopyMove_Tool
 
                         int Idx = listBox3.SelectedIndex;
 
+                        if (listBox3.SelectedItem == null)
+                            return;
+
                         SerchFolder.Remove(listBox3.SelectedItem.ToString());
                         listBox3.Items.RemoveAt(Idx);
                         listBox3.Update();
@@ -322,6 +328,9 @@ namespace FileCopyMove_Tool
 
                         int Idx = listBox4.SelectedIndex;
 
+                        if (listBox4.SelectedItem == null)
+                            return;
+
                         SerchFile.Remove(listBox4.SelectedItem.ToString());
                         listBox4.Items.RemoveAt(Idx);
                         listBox4.Update();
@@ -336,5 +345,29 @@ namespace FileCopyMove_Tool
             CopyCount = 0;
         }
 
+        private void _OutExt(object sender, KeyEventArgs e)
+        {
+            if (listBox2.Focused == false)
+                return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.Delete:
+                    {
+                        if (listBox2.SelectedItems.Count < 0)
+                            return;
+
+                        int Idx = listBox2.SelectedIndex;
+
+                        if (listBox2.SelectedItem == null)
+                            return;
+    
+                        SerchExt.Remove(listBox2.SelectedItem.ToString());
+                        listBox2.Items.RemoveAt(Idx);
+                        listBox2.Update();
+                    }
+                    break;
+            }
+        }
     }
 }
