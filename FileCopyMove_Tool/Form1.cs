@@ -316,5 +316,6 @@ namespace FileCopyMove_Tool
             listBox1.Items.Clear();
             CopyCount = 0;
         }
+
     }
 }
